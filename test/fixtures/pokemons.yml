@@ -2,6 +2,20 @@
 
 one:
   name: MyString
+  hit_points: 1
+  attack_strength: 1
+  defensive_strength: 1
+  special_attack_strength: 1
+  special_defensive_strength: 1
+  pokedex: one
+  pokemon_types: one
 
 two:
   name: MyString
+  hit_points: 1
+  attack_strength: 1
+  defensive_strength: 1
+  special_attack_strength: 1
+  special_defensive_strength: 1
+  pokedex: two
+  pokemon_types: two

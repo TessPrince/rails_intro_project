@@ -6,9 +6,9 @@ class CreatePokemons < ActiveRecord::Migration[7.0]
       t.integer :attack_strength
       t.integer :defensive_strength
       t.integer :special_attack_strength
-      t.integer :pecial_defensive_strength
-      t.references :number, null: false, foreign_key: true
-
+      t.integer :special_defensive_strength
+      t.references :pokedex, null: false, foreign_key: true
+      t.references :pokemon_types, null: false, foreign_key: true
 
       t.timestamps
     end

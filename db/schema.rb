@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_10_06_222914) do
+ActiveRecord::Schema[7.0].define(version: 2022_10_08_181122) do
   create_table "pokedexes", force: :cascade do |t|
     t.integer "number"
     t.datetime "created_at", null: false
@@ -32,11 +32,13 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_06_222914) do
     t.integer "attack_strength"
     t.integer "defensive_strength"
     t.integer "special_attack_strength"
-    t.integer "pecial_defensive_strength"
-    t.integer "number_id", null: false
+    t.integer "special_defensive_strength"
+    t.integer "pokedex_id", null: false
+    t.integer "pokemon_types_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["number_id"], name: "index_pokemons_on_number_id"
+    t.index ["pokedex_id"], name: "index_pokemons_on_pokedex_id"
+    t.index ["pokemon_types_id"], name: "index_pokemons_on_pokemon_types_id"
   end
 
   create_table "types", force: :cascade do |t|
@@ -47,5 +49,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_10_06_222914) do
 
   add_foreign_key "pokemon_types", "pokemon_names"
   add_foreign_key "pokemon_types", "type_types"
-  add_foreign_key "pokemons", "numbers"
+  add_foreign_key "pokemons", "pokedexes"
+  add_foreign_key "pokemons", "pokemon_types", column: "pokemon_types_id"
 end
