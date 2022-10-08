@@ -4,5 +4,5 @@ class Pokemon < ApplicationRecord
 
   validates :name, :hit_points, :attack_strength, :defensive_strength, :special_attack_strength, :special_defensive_strength, presence:true
   validates :name, uniqueness: true
-  validates :hit_points, :attack_strength, :defensive_strength, :special_attack_strength, :special_defensive_strength, numericality {only_integer: true}
+  validates :hit_points, :attack_strength, :defensive_strength, :special_attack_strength, :special_defensive_strength, numericality: {only_integer: true}
 end
