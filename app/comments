@@ -1,0 +1,41 @@
+Model: Pokemon (map to the db Pokemon Table)
+- name: string (varchar sql PK)
+- type: int (FK)
+- hit_points: int
+- attack_strength: int
+- defensive_strength: int
+- special_attack_strength: int
+- special_defensive_strength: int
+- number: int (FK)
+
+Model: Pokedex (map to pokedex Table (one to many))
+- id: int (PK)
+- number: int
+
+Pokemon_Types Table (joiner table)
+- pokemon_name: string (varchar sql FK)
+- type_type: string (varchar sql FK)
+- id: int (PK)
+
+Types Table (many to many with pokemon)
+- type: string (varchar sql PK)
+
+____________________
+Routing Information
+____________________
+GET /Pokemon          =>pokemon#index (collection route, load and dispaly all pokemon)
+GET /Pokemon/:name    =>pokemon#show (member route, load specific pokemon by name)
+GET /Pokedex/:number  =>pokedex#show (member route, load specific pokemon by pokedex number)
+GET /AboutPage
+
+Controller: PokemonController
+- action: index
+- action: show
+
+Controller: PokedexController
+- action: show
+
+Views
+- view: index /app/view/pokemon/index.html.erb
+- view: show /app/view/pokemon/show.html.erb
+- view: shwo /app/view/pokedex/show.html.erb
