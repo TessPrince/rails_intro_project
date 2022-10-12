@@ -13,7 +13,8 @@ pokemon = CSV.parse(csv_data, headers:true, encoding: "utf-8")
 
 pokemon.each do |p|
   pokedex_number = Pokedex.find_or_create_by(number: p["#"])
-  if pokedex_number && pokedex_number.valid?
+  type = Type.find_or_create_by(name: p["Type"])
+  if pokedex_number && pokedex_number.valid? && type && type.valid?
     #creates the pokemon
     pokemon = pokedex_number.pokemons.create(
       name: p["Name"],

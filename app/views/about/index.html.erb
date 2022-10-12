@@ -1,11 +1,14 @@
 <h2 class="title is-2">About Page</h2>
 <h3 class="subtitle is-2">Describing the Dataset</h3>
 <div class="content">
-  <p>I have chosen the “Pokemon with stats” dataset from <a href="https://www.kaggle.com/datasets">Kraggle</a>. I am planning to use the name, type, hit_points, attack_strength, defensive_strength, special_attack_strength, special_defensive_strength, pokedex number, and the two type columns.</p>
+  <p>I have chosen the “Pokemon with stats” dataset from <a href="https://www.kaggle.com/datasets" target="_blank">Kraggle</a>. I am planning to use the name, type, hit_points, attack_strength, defensive_strength, special_attack_strength, special_defensive_strength, pokedex number, and the two type columns.</p>
   <p>I will be making an adjustment to the dataset, I will combine the two type columns so that they are one so I can deal with a many to many relationship. </p>
   <p>I am going to have 4 tables, the main Pokemon table, the Pokedex table, the type table and the joiner table between pokemon and type table. </p>
   <p>The <strong>Pokedex table</strong> will have and id and the proper pokedex number (I am not using the number as the id as it is not unique since there a few pokemon with the same size (there name is different but their pokedex number is the same))</p>
   <p>The <strong>Pokemon table</strong> with have most of the start columns mentioned previously. Their primary key will be the id. It will also connect to the pokedex table using the pokedex id as a foreign key so that it has access to the pokedex number. The pokemon table will also be connected to the joiner table so that they have access to the multiple types a pokemon has (they can have one or two types).</p>
   <p>The <strong>joiner table</strong> will have the id from the pokemon table as a foreign key as well as the id from the type table as a foreign key and there will bean new column for id which will be the primary key.</p>
   <p>Finally, the <strong>Type table</strong> will have the id as primary key and then the type.</p>
+</div>
+<div>
+  <img src="erd.png" alt="A ERD diagram that shows the tables and their relationshions graphically.">
 </div>
