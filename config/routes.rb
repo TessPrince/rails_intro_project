@@ -7,6 +7,4 @@ Rails.application.routes.draw do
 
  resources :pokemon, only: [:index, :show]
  resources :pokedex, only: [:show]
-
-  #resources pokedex, only: [:show]
 end
