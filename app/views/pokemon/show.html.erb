@@ -1,8 +1,7 @@
-<p class="subtitle is-4"><%= link_to 'Home', pokemon_path %> | <%= link_to 'About', about_path%></p>
 <h1 class="title is-2">Pokemon: <%= @pokemon.name %></h1>
-<p>Hit Points: <%= @pokemon.hit_points %></p>
-<p>Attack Strength: <%= @pokemon.attack_strength %></p>
-<p>Defensive Strength: <%= @pokemon.defensive_strength %></p>
-<p>Special Attack Strength: <%= @pokemon.special_attack_strength %></p>
-<p>Special Defensive Strength: <%= @pokemon.special_defensive_strength %></p>
+<p>Hit Points: <strong><%= @pokemon.hit_points %></strong></p>
+<p>Attack Strength: <strong><%= @pokemon.attack_strength %></strong></p>
+<p>Defensive Strength: <strong><%= @pokemon.defensive_strength %></strong></p>
+<p>Special Attack Strength: <strong><%= @pokemon.special_attack_strength %></strong></p>
+<p>Special Defensive Strength: <strong><%= @pokemon.special_defensive_strength %></strong></p>
 <p><%= link_to 'Find Pokedex Number', pokedex_path %></p>
