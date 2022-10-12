@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'pokemon/index'
+  get 'pokemon/show'
   get 'pokedex', to: 'pokedex#show', as: 'pokedex'
   get 'about', to: 'about#index', as: 'about'
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
