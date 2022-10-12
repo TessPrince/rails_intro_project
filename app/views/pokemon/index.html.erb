@@ -1,2 +1,6 @@
-<h1>Pokemon#index</h1>
-<p>Find me in app/views/pokemon/index.html.erb</p>
+<h1>All Pokemon</h1>
+<ul>
+  <% @pokemons.each do |p| %>
+    <li><%= p.name %></li>
+  <% end %>
+</ul>
