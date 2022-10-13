@@ -4,4 +4,5 @@
 <p>Defensive Strength: <strong><%= @pokemon.defensive_strength %></strong></p>
 <p>Special Attack Strength: <strong><%= @pokemon.special_attack_strength %></strong></p>
 <p>Special Defensive Strength: <strong><%= @pokemon.special_defensive_strength %></strong></p>
+<p><%= pluralize(@pokemon.types.count, 'Type') %>: <strong><%= @pokemon.types.map(&:name).join(",") %></strong></p>
 <p><%= link_to 'Find Pokedex Number', pokedex_path %></p>

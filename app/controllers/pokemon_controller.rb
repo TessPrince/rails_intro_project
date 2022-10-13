@@ -4,7 +4,8 @@ class PokemonController < ApplicationController
   end
 
   def show
-    @pokemon = Pokemon.find(params[:id])
+    @pokemon = Pokemon.joins(:pokemon_types).find(params[:id])
+    @types = PokemonType.joins(:types).where(pokemon_id: params[:id])
   end
 
   def search
