@@ -1,6 +1,6 @@
 <h1 class="title is-2">All Pokemon</h1>
 <ul>
   <% @pokemons.each do |p| %>
-    <li><%= link_to p.name, p %></li>
+    <li><%= link_to p.name, pokemon_path(p) %></li>
   <% end %>
 </ul>
