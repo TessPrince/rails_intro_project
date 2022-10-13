@@ -1,8 +1,8 @@
 require "csv"
 
+PokemonType.delete_all
 Pokemon.delete_all
 Pokedex.delete_all
-PokemonType.delete_all
 Type.delete_all
 
 filename = Rails.root.join("db/Pokemon.csv")
@@ -13,8 +13,7 @@ pokemon = CSV.parse(csv_data, headers:true, encoding: "utf-8")
 
 pokemon.each do |p|
   pokedex_number = Pokedex.find_or_create_by(number: p["#"])
-  type = Type.find_or_create_by(name: p["Type"])
-  if pokedex_number && pokedex_number.valid? && type && type.valid?
+  if pokedex_number && pokedex_number.valid?
     #creates the pokemon
     pokemon = pokedex_number.pokemons.create(
       name: p["Name"],
@@ -28,6 +27,12 @@ pokemon.each do |p|
   else
     puts "Invalid pokedex #{p['#']} for pokemon #{p["Name"]}"
   end
+
+  types = p["Type"].split(",").map(&:strip)
+  types.each do |type_name|
+    type = Type.find_or_create_by(name: type_name)
+
+    PokemonType.create(pokemon: pokemon, type: type)
+  end
+
 end
-puts "Created #{Pokedex.count} Pokedex entries."
-puts "Created #{Pokemon.count} Pokemon."

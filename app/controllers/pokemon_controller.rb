@@ -9,7 +9,13 @@ class PokemonController < ApplicationController
 
   def search
     wildcard ="%#{params[:keywords]}%"
+    type_wildcard = params[:type]
 
-    @pokemons = Pokemon.where("name LIKE ?", wildcard)
+    if type_wildcard != ""
+      @pokemons = Pokemon.joins(:pokemon_types).where("name LIKE ? AND type_id = ?", wildcard, type_wildcard)
+   else
+      @pokemons = Pokemon.where("name LIKE ?", wildcard)
+   end
+
   end
 end
