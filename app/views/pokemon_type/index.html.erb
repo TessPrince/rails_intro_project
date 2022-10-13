@@ -1,0 +1,6 @@
+<h1 class="title is-2">All PokemonTypes</h1>
+<ul>
+  <% @pokemonTypes.each do |p| %>
+    <li><%= link_to p.pokemon_id, type_index_path(p) %>, <%= p.type_id %></li>
+  <% end %>
+</ul>

@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'pokemon_type/index'
+  get 'type/index'
   # Defines the root path route ("/")
   root to: "pokemon#index"
 
@@ -12,4 +14,6 @@ Rails.application.routes.draw do
     end
 
   resources :pokedex, only: [:show]
+  resources :type, only: [:index]
+  resources :pokemon_type, only: [:index]
 end

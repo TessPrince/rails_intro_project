@@ -1,0 +1,2 @@
+module PokemonTypeHelper
+end

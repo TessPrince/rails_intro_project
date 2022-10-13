@@ -1,0 +1,6 @@
+<h1 class="title is-2">All Types</h1>
+<ul>
+  <% @types.each do |t| %>
+    <li><%= link_to t.name, type_index_path(t) %></li>
+  <% end %>
+</ul>
